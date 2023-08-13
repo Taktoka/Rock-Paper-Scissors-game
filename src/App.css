@@ -1,38 +1,150 @@
 .App {
+  min-height: 100vh;
+  position: relative;
+  padding: 0 0 20px 0;
+  margin-top: 35px;
+}
+.header {
+  color: #fff;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+  border: 2px solid var(--header-outline);
+  border-radius: 6px;
+  padding: 15px;
+}
+.header .score {
+  background-color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 6px;
+  width: 130px;
+}
+.header .score .text {
+  font-size: 16px;
+  color: var(--score-text);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.header .score .num {
+  font-size: 50px;
+  color: var(--dark-text);
+  font-weight: 700;
+}
+.header .names {
+  line-height: 1;
+}
+.header .names li {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.rules {
+  width: 140px;
+  position: absolute;
+  bottom: 90px;
+  right: 50px;
+  padding: 10px 15px;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid var(--header-outline);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.layer {
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 100%;
+  transition: 0.5s;
+}
+.layer .rules-img {
+  margin: 7% auto;
+  background-color: #fff;
+  width: 450px;
+  height: 500px;
+  padding: 15px 15px 30px;
+  border-radius: 6px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layer .rules-img .actions {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 20px;
+}
+.layer .rules-img .actions p {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+.layer .rules-img .close {
+  width: 25px;
+  cursor: pointer;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-device-width: 375px) {
+  .App {
+    margin-top: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .layer {
+    height: 100%;
+  }
+  .layer .rules-img {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .layer .rules-img img {
+    width: 250px;
+    margin-top: 80px;
+  }
+
+  .layer .rules-img .actions {
+    flex-direction: column;
+  }
+
+  .layer .rules-img .actions p {
+    font-size: 30px;
+  }
+  .layer .rules-img .actions .close {
+    width: 20px;
+
+    position: absolute;
+    bottom: 50px;
+  }
+  .header {
+    width: 90%;
+  }
+  .header img {
+    width: 50px;
+  }
+  .header .score {
+    width: 55px;
+    padding: 5px 10px;
+  }
+  .header .score .num {
+    font-size: 25px;
+  }
+  .header .score .text {
+    font-size: 10px;
+  }
+  .rules {
+    width: 120px;
+    padding: 5px 15px;
+    font-size: 17px;
+    bottom: 50px;
+    left: 35%;
   }
 }

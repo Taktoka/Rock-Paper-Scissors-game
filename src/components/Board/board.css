@@ -1,0 +1,291 @@
+.board .game-board,
+.board .game-result {
+  margin: 100px auto;
+}
+.board .game-board {
+  background-image: url(../../images/bg-pentagon.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 430px;
+  height: 430px;
+  position: relative;
+}
+
+.board .lizard,
+.board .paper,
+.board .rock,
+.board .scissors,
+.board .spock {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.board .lizard {
+  background-image: var(--lizard-gradient);
+  box-shadow: 0px 5px 0px 0px #7135e3;
+}
+.board .paper {
+  background-image: var(--paper-gradient);
+  box-shadow: 0px 5px 0px 0px #2238a4;
+}
+.board .rock {
+  background-image: var(--rock-gradient);
+  box-shadow: 0px 5px 0px 0px #b81936;
+}
+.board .scissors {
+  background-image: var(--scissors-gradient);
+  box-shadow: 0px 5px 0px 0px #b86f0e;
+}
+
+.board .spock {
+  background-image: var(--cyan);
+  box-shadow: 0px 5px 0px 0px #1a7e90;
+}
+
+.board .img {
+  background-color: #fff;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0px -6px 0 #d5cdcd;
+}
+
+.board .game-board .lizard {
+  bottom: -38px;
+  left: 18px;
+}
+.board .game-board .paper {
+  top: 110px;
+  right: -65px;
+}
+.board .game-board .rock {
+  bottom: -38px;
+  right: 18px;
+}
+
+.board .game-board .scissors {
+  top: -45px;
+  left: 143px;
+}
+
+.board .game-board .spock {
+  top: 110px;
+  left: -65px;
+}
+
+.board .game-board.hidden {
+  display: none;
+}
+
+.board .game-board.spin {
+  animation: spin 1.5s ease-in-out 1;
+}
+
+.board .game-board .lizard,
+.board .game-board .paper,
+.board .game-board .rock,
+.board .game-board .scissors,
+.board .game-board .spock {
+  position: absolute;
+}
+.board .game-result .lizard,
+.board .game-result .paper,
+.board .game-result .rock,
+.board .game-result .scissors,
+.board .game-result .spock {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  top: -3px;
+  left: -3px;
+}
+
+.board .game-board img,
+.board .game-result img {
+  position: relative;
+  left: 0%;
+  top: 23%;
+}
+
+.board .game-result {
+  margin: 70px auto;
+  display: none;
+  width: 750px;
+  justify-content: space-between;
+  align-items: center;
+}
+.board .game-result .house .shadow,
+.board .game-result .Player .shadow {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #00000021;
+}
+
+.board .game-result .house .shadow > div {
+  visibility: hidden;
+}
+.board .game-result .house .shadow > div.visible {
+  visibility: visible;
+}
+
+.board .game-result .Player,
+.board .game-result .house {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.board .game-result img {
+  top: 30%;
+}
+
+.board .game-result .text {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.board .game-result.show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.board .game-result .note {
+  width: 180px;
+  text-align: center;
+  visibility: hidden;
+}
+.board .game-result .note.visible {
+  visibility: visible;
+}
+.board .game-result .note p {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.board .game-result .note button {
+  width: 100%;
+  padding: 10px 15px;
+  border: navajowhite;
+  border-radius: 10px;
+  color: var(--dark-text);
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.board .game-result .note button:hover {
+  color: #dc3050;
+}
+.board .game-result .winner {
+  box-shadow: 0 0 4px 40px #54709e12, 0 0 6px 95px #415c871c,
+    0 0 2px 165px #344e7812;
+}
+
+@media (max-device-width: 375px) {
+  .board .game-board {
+    background-size: contain;
+    width: 230px;
+    height: 230px;
+  }
+  .board .game-board img {
+    width: 30px;
+    top: 20%;
+  }
+  .board .lizard,
+  .board .paper,
+  .board .rock,
+  .board .scissors,
+  .board .spock {
+    width: 80px;
+    height: 80px;
+  }
+  .board .game-board .scissors {
+    top: -25px;
+    left: 78px;
+  }
+  .board .game-board .paper {
+    top: 54px;
+    right: -28px;
+  }
+  .board .game-board .spock {
+    top: 54px;
+    left: -28px;
+  }
+  .board .game-board .rock {
+    bottom: -20px;
+    right: 15px;
+  }
+  .board .game-board .lizard {
+    bottom: -20px;
+    left: 15px;
+  }
+  .board .game-result {
+    width: 280px;
+    margin: 35px auto;
+  }
+  .board .game-result .lizard,
+  .board .game-result .paper,
+  .board .game-result .rock,
+  .board .game-result .scissors,
+  .board .game-result .spock {
+    width: 100px;
+    height: 100px;
+    top: -7px;
+    left: -4px;
+  }
+  .board .game-result img {
+    width: 35px;
+    top: 20%;
+  }
+  .board .game-result .text {
+    font-size: 13px;
+    position: relative;
+    top: 170px;
+  }
+  .board .game-result .house .shadow,
+  .board .game-result .Player .shadow {
+    width: 90px;
+    height: 90px;
+  }
+  .board .game-result .note {
+    width: 50%;
+    position: absolute;
+    bottom: 140px;
+    left: 25%;
+  }
+
+  .board .game-result .note p {
+    font-size: 40px;
+  }
+  .board .game-result .note button {
+    font-size: 16px;
+  }
+
+  .board .game-result .winner {
+    box-shadow: 0 0 4px 20px #54709e12, 0 0 6px 48px #415c871c,
+      0 0 2px 77px #344e7812;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
